@@ -2,7 +2,7 @@
 
 A professional, responsive business website developed for a tech consultancy firm. This project demonstrates clean UI/UX principles, semantic HTML5, and modern CSS layout techniques.
 
-[**🔗 https://amonmk.github.io/JAMMPIT-TECH-SOLUTIONS/ 
+🔗 https://amonmk.github.io/JAMMPIT-TECH-SOLUTIONS/ 
 
 ## 🚀 Features
 * **Multi-page Architecture:** Includes Home, About, Services, Resources, and Contact pages.
