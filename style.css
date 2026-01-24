@@ -23,9 +23,10 @@ header {
     background: var(--dark-bg);
     padding: 15px 5%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--primary-green);
+    border-bottom: 1px solid var(--primary-green);
     margin: 0;
     text-align: left;
     font-size: larger;
