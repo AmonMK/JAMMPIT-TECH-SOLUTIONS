@@ -41,8 +41,8 @@ header {
 nav a {
     margin-left: 20px;
     text-decoration: none;
-    color: var(--accent-green);
-    font-weight: 500;
+    color: #0000;
+    font-weight: 600;
     
 }
 /* Container & Sections */
