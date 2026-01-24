@@ -2,7 +2,7 @@
 
 :root {
     --primary-blue:#ffffff; 
-    --accent-green: #006602 /*#2dbd5d*/; 
+    --accent-green: #006602; /*#2dbd5d*/ 
     --bg-light: #f9f9f9;
     --text-dark: #333;
 }
@@ -14,7 +14,7 @@ body {
     margin: 0;
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: #fff;
+   background-image: url('images/im11.jpeg');
 
 }
 
