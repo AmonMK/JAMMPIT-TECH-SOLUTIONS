@@ -1,0 +1,178 @@
+/* Using Montserrat and Poppins as requested */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vogue&display=swap');
+
+
+:root {
+    --primary-blue: #ffffffc9; /* */
+    --accent-blue: #006602;  /* */
+    --bg-light: #f9f9f9;
+    --text-dark: #333;
+}
+
+body {
+    font-family: 'Vogue', serif;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #fff;
+
+}
+
+/* Header & Navigation */
+header {
+    background: var(--primary-blue);
+    padding: -1;
+    display: flexbox;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    margin: 2%;
+    text-align: left;
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo {
+    font-family: 'Vogue', serif ;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--accent-blue);
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--accent-blue);
+    font-weight: 500;
+    
+}
+/* Container & Sections */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 5%;
+}
+
+.hero {
+    text-align: center;
+    padding: 90px 10%;
+    background-image: url('im6.jpeg');
+    background-size: 100% 100%;
+    background-position: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('im6.jpeg');
+    color: white;
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+/* Testimonials Grid (from Image) */
+.testimonial-header {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bolder;
+}
+.testimonial-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* 1. Base style for your cards */
+.testimonial-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #eeeeee;
+  
+  /* Critical: This makes the hover effect smooth rather than jerky */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* 2. The Hover state */
+.testimonial-card:hover {
+  /* Lift the card up slightly */
+  transform: translateY(-8px);
+  
+  /* Add a soft shadow to create depth */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  
+  /* Optional: Change border color on hover */
+  border-color: #2dbd5d;
+}
+
+/* 3. Optional: Add an effect to the user image inside the card */
+.testimonial-card:hover .user-img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.user-img {
+    width: 50px;
+    height: 50px;
+    background: #e0e0e0;
+    border-radius: 50%;
+}
+
+.user-details h4 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+.user-details span {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/* Forms & Cards */
+.card {
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+input, textarea {
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    background: var(--accent-blue);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #f1f1f1;
+}
