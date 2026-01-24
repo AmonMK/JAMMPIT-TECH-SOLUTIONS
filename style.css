@@ -32,8 +32,8 @@ header {
 }
 
 .logo {
-    font-family: 'Vogue', serif ;
-    font-weight: 700;
+    font-family:'Playfair Display', serif;
+    font-weight: 800;
     font-size: 1.5rem;
     color: var(--accent-green);
 }
