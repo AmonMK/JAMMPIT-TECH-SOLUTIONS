@@ -22,9 +22,9 @@ body {
 
 /* Header & Navigation */
 header {
-    background: var(--primary-blue);
-    padding: -1;
-    display: flexbox;
+    background: var(--primary-blue, #0044cc);
+    padding: 10px 20px;;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
