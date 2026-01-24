@@ -58,10 +58,10 @@ nav a {
 .hero {
     text-align: center;
     padding: 90px 10%;
-    background-image: url('im6.jpeg');
+    background-image: url('images/im6.jpeg');
     background-size: 100% 100%;
     background-position: center;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('im6.jpeg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/im6.jpeg');
     color: white;
     display: flex ;
     flex-direction: column;
