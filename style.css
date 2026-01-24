@@ -1,15 +1,24 @@
-/* Using Montserrat and Poppins as requested */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Vogue&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500&display=swap');
 
 :root {
-    --primary-blue: #ffffffc9; /* */
-    --accent-blue: #006602;  /* */
+    --primary-blue:#0044cc; 
+    --accent-green: #006602 /*#2dbd5d*/; 
     --bg-light: #f9f9f9;
     --text-dark: #333;
 }
 
+/*Header & Nav*/
+header {
+    background: var(--primary-blue);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*General styling*/
 body {
     font-family: 'Vogue', serif;
     font-size: 16px;
@@ -20,31 +29,17 @@ body {
 
 }
 
-/* Header & Navigation */
-header {
-    background: var(--primary-blue, #0044cc);
-    padding: 10px 20px;;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    margin: 2%;
-    text-align: left;
-    font-size: larger;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .logo {
     font-family: 'Vogue', serif ;
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--accent-blue);
+    color: var(--accent-green);
 }
 
 nav a {
     margin-left: 20px;
     text-decoration: none;
-    color: var(--accent-blue);
+    color: var(--accent-green);
     font-weight: 500;
     
 }
@@ -63,7 +58,7 @@ nav a {
     background-position: center;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/im6.jpeg');
     color: white;
-    display: flex ;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -163,7 +158,7 @@ input, textarea {
 }
 
 button {
-    background: var(--accent-blue);
+    background: var(--accent-green);
     color: white;
     padding: 12px;
     border: none;
