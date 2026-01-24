@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500&display=swap');
 
 :root {
-    --primary-blue:#ffffff; 
+    --primary-blue:#14fc0c; 
     --accent-green: #006602; /*#2dbd5d*/ 
     --bg-light: #f9f9f9;
     --text-dark: #333;
@@ -56,7 +56,7 @@ nav a {
 .hero {
     text-align: center;
     padding: 90px 10%;
-    background-image: url('images/im2.jpeg');
+    background-image: url('images/im6.jpeg');
     background-size: 100% 100%;
     background-position: center;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/im6.jpeg');
