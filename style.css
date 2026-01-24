@@ -63,7 +63,7 @@ nav a {
     background-size: 100% 100%;
     background-position: center;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/im6.jpeg');
-    color: var(--white)
+    color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,7 +87,7 @@ nav a {
 
 /* 1. Base style for your cards */
 .testimonial-card {
-  background-color: var(--white)
+  background-color: var(--white);
   padding: 32px;
   border-radius: 12px;
   border: 1px solid #eeeeee;
