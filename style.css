@@ -1,30 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;500&display=swap');
 
 :root {
-    --primary-blue:#45c9be; 
-    --accent-green: #006602; /*#2dbd5d*/ 
-    --bg-light: #f9f9f9;
-    --text-dark: #333;
+    --primary-green: #2dbd5d; 
+    --dark-bg: #1a1a1a;
+    --light-text: #f4f4f4;
+    --body-text: #444;
+    --white: #ffffff;
 }
 
 /*General styling*/
 body {
-    font-family: 'Vogue', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    margin: 0;
     line-height: 1.6;
-    color: var(--text-dark);
-   background-image: url('images/im11.jpeg');
+    margin: 0;
+    color: var(--body-text);
+    background-image: url('images/im11.jpeg');
 }
 
 /*Header & Nav*/
 header {
-    background: var(--primary-blue);
+    background: var(--dark-bg);
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid var(--primary-green);
     margin: 0;
     text-align: left;
     font-size: larger;
@@ -33,18 +34,21 @@ header {
 
 .logo {
     font-family:'Playfair Display', serif;
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: var(--accent-green);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--primary-green);
+    text-decoration: none;
 }
 
 nav a {
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
-    color: #000000;
-    font-weight: 600;
-    
+    color: var(--light-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
+
 /* Container & Sections */
 .container {
     max-width: 1200px;
@@ -54,18 +58,16 @@ nav a {
 
 .hero {
     text-align: center;
-    padding: 90px 10%;
+    padding: 100px 10%;
     background-image: url('images/im6.jpeg');
     background-size: 100% 100%;
     background-position: center;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/im6.jpeg');
-    color: white;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/im6.jpeg');
+    color: var(--white)
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
 }
 
 /* Testimonials Grid (from Image) */
@@ -79,15 +81,15 @@ nav a {
 .testimonial-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 24px;
     justify-content: center;
 }
 
 /* 1. Base style for your cards */
 .testimonial-card {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
+  background-color: var(--white)
+  padding: 32px;
+  border-radius: 12px;
   border: 1px solid #eeeeee;
   
   /* Critical: This makes the hover effect smooth rather than jerky */
