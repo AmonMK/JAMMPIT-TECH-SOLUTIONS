@@ -45,8 +45,8 @@ header {
 }
 
 nav a {
-    margin-left: 25px;
-    text-decoration: none;
+    margin-left: 5px;
+    text-decoration: solid;
     color: var(--light-text);
     font-weight: 500;
     transition: color 0.3s ease;
@@ -100,7 +100,7 @@ nav a {
 }
 
 /* 6. FOOTER */
-footer {
+.footer-container {
     text-align: center;
     padding: 2px;
     background: #f1f1f1;
@@ -111,7 +111,7 @@ footer {
 }
 
 .footer-nav a {
-    margin: 1px;
+    margin: 1.px;
     text-decoration: none;
     color: var(--body-text);
 }
