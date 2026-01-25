@@ -67,10 +67,12 @@ nav a {
 .hero {
     text-align: center;
     padding: 100px 10%;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/im6.jpeg');
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/bg7.jpeg');
+    background-repeat: no-repeat;   
+    background-attachment: fixed;  
+    background-position: center;   
+    background-size: auto;      
+    background-color: #000000;
 }
 
 .container {
