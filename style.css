@@ -1,5 +1,6 @@
 /* 1. SETUP & VARIABLES */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.cdnfonts.com/css/satoshi');
 
 :root {
     --primary-green: #2dbd5d;
@@ -28,22 +29,25 @@ body {
 }
 
 /* 3. HEADER & NAVIGATION */
-header {
+header .logo {
     background: var(--dark-bg);
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--primary-green);
+    header .logo {
+    font-family: 'Satoshi', sans-serif; 
+    text-transform: uppercase;
+    letter-spacing: 0.25rem; 
+    font-weight: 800;        
+    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 }
 
-.logo {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: var(--primary-green);
-    text-decoration: none;
-}
+
 
 nav a {
     margin-left: 5px;
@@ -127,7 +131,6 @@ nav a {
  height: 30%;
  border-radius: 1%;
  background: #e0e0e0;
-
 }
 
 
