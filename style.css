@@ -1,16 +1,9 @@
 /* 1. SETUP & VARIABLES */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
 @import url('https://fonts.cdnfonts.com/css/satoshi');
-@import url(https://www.dafont.com/steiner2.font);
 
-@font-face {
-    font-family: 'Hauser';
-    src: url('C:\Users\Hp\Downloads\Compressed\hauser.ttf') format('truetype'); 
-    font-weight: normal;
-    font-style: normal;
-}
 :root {
-    --primary-green: #817ff9;
+    --primary-green: #2dbd5d;
     --dark-bg: #1a1a1a;
     --light-text: #f4f4f4;
     --body-text: #444;
@@ -36,18 +29,24 @@ body {
 }
 
 /* 3. HEADER & NAVIGATION */
-header .logo {
+header {
     background: var(--dark-bg);
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--primary-green);
-    font-family: 'Steiner';
+}
+    .logo {
+    font-family: 'Satoshi', sans-serif; 
     text-transform: uppercase;
     letter-spacing: 0.25rem; 
     font-weight: 800;        
+    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
 
 
 
