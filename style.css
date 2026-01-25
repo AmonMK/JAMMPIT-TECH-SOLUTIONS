@@ -40,7 +40,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--primary-green);
+    border-bottom: 1px solid var(--white);
 }
     .logo {
     font-family: 'Satoshi', sans-serif; 
