@@ -20,7 +20,12 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     color: var(--body-text);
-    background-image: url('images/im11.jpeg');
+    background-image: url('images/ bg4.jpeg');
+    background-repeat: no-repeat;   
+    background-attachment: fixed;  
+    background-position: center;   
+    background-size: contain;      
+    background-color: #000000;    
 
     /* These 3 lines make the footer stay at the bottom */
     display: flex;
