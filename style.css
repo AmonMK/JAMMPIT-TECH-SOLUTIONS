@@ -14,11 +14,11 @@
 }
 
 /* 2. THE FLEXBOX WRAPPER (This fixes your footer) */
-body {
+.body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     color: var(--body-text);
-    background: linear-gradient(red, blue);
+    background-image: url('images/im11.jpeg');
     
     /* These 3 lines make the footer stay at the bottom */
     display: flex;
