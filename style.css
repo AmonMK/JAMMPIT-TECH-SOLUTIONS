@@ -52,12 +52,12 @@ header {
 
 
 nav a {
-    margin-left: 5px;
+    margin-left: 35px;
     text-decoration: solid;
     color: var(--light-text);
-    font-weight: 500;
+    font-weight: 800;
     transition: color 0.3s ease;
-    align-items: center;
+    text-underline-offset: var(--dark-bg);
 }
 
 /* 4. MAIN CONTENT AREAS */
