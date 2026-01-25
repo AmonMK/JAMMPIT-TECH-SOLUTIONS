@@ -44,7 +44,7 @@ header {
     text-decoration: none;
 }
 
-.nav {
+nav a{
     margin-left: 5px;
     text-decoration: solid;
     color: var(--light-text);
