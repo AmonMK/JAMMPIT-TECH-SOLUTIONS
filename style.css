@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
 
 :root {
-    --primary-green: #2dbd5d; 
+    --primary-green: #2dbd5d;
     --dark-bg: #1a1a1a;
     --light-text: #f4f4f4;
     --body-text: #444;
@@ -10,7 +10,8 @@
 }
 
 * {
-    box-sizing: border-box; /* Ensures padding doesn't break element width */
+    box-sizing: border-box;
+    /* Ensures padding doesn't break element width */
 }
 
 /* 2. THE FLEXBOX WRAPPER (This fixes your footer) */
@@ -19,17 +20,18 @@ body {
     margin: 0;
     color: var(--body-text);
     background-image: url('images/im11.jpeg');
-    
+
     /* These 3 lines make the footer stay at the bottom */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 
 /* 3. HEADER & NAVIGATION */
 header {
     background: var(--dark-bg);
     padding: 15px 5%;
+    spa
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +46,7 @@ header {
     text-decoration: none;
 }
 
-nav a{
+nav a {
     margin-left: 5px;
     text-decoration: solid;
     color: var(--light-text);
@@ -56,7 +58,7 @@ nav a{
 .hero {
     text-align: center;
     padding: 100px 10%;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/im6.jpeg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/im6.jpeg');
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -64,13 +66,16 @@ nav a{
 
 .container {
     max-width: 1200px;
-    margin: 0 auto; /* Centers the content horizontally */
+    margin: 0 auto;
+    /* Centers the content horizontally */
     padding: 40px 5%;
-    flex: 1; /* This pushes the footer down by taking up all available space */
+    flex: 1;
+    /* This pushes the footer down by taking up all available space */
 }
 
 /* 5. COMPONENTS (Cards & Grids) */
-.card, .testimonial-card {
+.card,
+.testimonial-card {
     background: var(--white);
     padding: 15px;
     border-radius: 12px;
@@ -101,7 +106,7 @@ nav a{
 
 /* 6. FOOTER */
 .footer-container {
-    text-align: center;
+    text-align: left;
     padding: 2px;
     background: #f1f1f1;
 }
