@@ -51,6 +51,7 @@ nav a {
     color: var(--light-text);
     font-weight: 500;
     transition: color 0.3s ease;
+    align-items: center;
 }
 
 /* 4. MAIN CONTENT AREAS */
