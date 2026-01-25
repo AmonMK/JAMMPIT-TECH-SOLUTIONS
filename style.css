@@ -48,7 +48,7 @@ header {
     font-size: larger; 
     font-weight: 800;
     font-weight: 800;    
-    background: linear-gradient(90deg, hsl(81, 82%, 57%) 0%, #fefefe 100%);
+    background: linear-gradient(90deg, hsl(123, 100%, 30%) 0%, #00ffc8 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
