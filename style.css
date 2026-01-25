@@ -121,6 +121,9 @@ nav a {
     color: var(--body-text);
 }
 
+.team-member{
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .team-photo {
     width: 150px; 
     height: auto;  
