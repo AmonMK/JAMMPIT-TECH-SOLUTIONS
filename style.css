@@ -14,7 +14,7 @@
 }
 
 /* 2. THE FLEXBOX WRAPPER (This fixes your footer) */
-body {
+.body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     color: var(--body-text);
@@ -27,7 +27,7 @@ body {
 }
 
 /* 3. HEADER & NAVIGATION */
-header {
+.header {
     background: var(--dark-bg);
     padding: 15px 5%;
     display: flex;
@@ -44,7 +44,7 @@ header {
     text-decoration: none;
 }
 
-nav a {
+.nav {
     margin-left: 5px;
     text-decoration: solid;
     color: var(--light-text);
@@ -72,7 +72,7 @@ nav a {
 /* 5. COMPONENTS (Cards & Grids) */
 .card, .testimonial-card {
     background: var(--white);
-    padding: 25px;
+    padding: 15px;
     border-radius: 12px;
     margin-bottom: 20px;
     border: 1px solid #eee;
@@ -93,8 +93,8 @@ nav a {
 }
 
 .user-img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     background: #e0e0e0;
     border-radius: 50%;
 }
