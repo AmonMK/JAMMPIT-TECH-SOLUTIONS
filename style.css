@@ -1,5 +1,5 @@
 /* 1. SETUP & VARIABLES */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/satoshi');
 
 :root {
@@ -17,7 +17,7 @@
 
 /* 2. THE FLEXBOX WRAPPER (This fixes your footer) */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     color: var(--body-text);
     background-image: url('images/bg6.jpg');
