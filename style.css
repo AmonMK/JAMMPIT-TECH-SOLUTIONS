@@ -39,9 +39,11 @@ header {
 }
     .logo {
     font-family: 'Satoshi', sans-serif; 
-    text-transform: uppercase;
-    letter-spacing: 0.25rem; 
-    font-weight: 800;        
+    letter-spacing: 0.60rem;
+    font-size: larger; 
+    font-weight: 800;
+    font-weight: 800;    
+    color: #1a1a1a;    
     background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
