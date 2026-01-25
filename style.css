@@ -31,7 +31,6 @@ body {
 header {
     background: var(--dark-bg);
     padding: 15px 5%;
-    spa
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -119,4 +118,10 @@ nav a {
     margin: 1.px;
     text-decoration: none;
     color: var(--body-text);
+}
+
+.team-photo {
+    width: 150px; 
+    height: auto;  
+    border-radius: 8px; 
 }
