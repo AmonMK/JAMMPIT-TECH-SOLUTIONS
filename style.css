@@ -36,7 +36,7 @@ header .logo {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--primary-green);
-    font-family: 'Satoshi', sans-serif; 
+    font-family: 'Courier New', Courier, monospace;
     text-transform: uppercase;
     letter-spacing: 0.25rem; 
     font-weight: 800;        
