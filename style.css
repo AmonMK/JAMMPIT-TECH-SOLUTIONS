@@ -86,7 +86,7 @@ nav a {
 /* 5. COMPONENTS (Cards & Grids) */
 .card,
 .testimonial-card {
-    background: linear-gradient (rgb(112, 184, 105), rgb(117, 198, 242))
+    background: linear-gradient (rgb(112, 184, 105), rgb(117, 198, 242));
     padding: 15px;
     border-radius: 12px;
     margin-bottom: 20px;
