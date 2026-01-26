@@ -86,7 +86,7 @@ nav a {
 /* 5. COMPONENTS (Cards & Grids) */
 .card,
 .testimonial-card {
-    background: var(--white);
+    background-color: #000000;
     padding: 15px;
     border-radius: 12px;
     margin-bottom: 20px;
