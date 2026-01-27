@@ -140,8 +140,7 @@ nav a {
 }
 
 .social-icons img {
-    width: 2px;
-    height: 2px;
-    margin: 0 10px;
-    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+        vertical-align: middle;
 }
