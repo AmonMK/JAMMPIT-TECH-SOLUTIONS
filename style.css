@@ -145,3 +145,10 @@ nav a {
         vertical-align: middle;
         display: flexbox;
 }
+.copyright {
+    font-size: 12px;
+    color: var(--light-text);
+    display: block;
+    margin: 5px 0;
+}
+    
