@@ -148,7 +148,7 @@ nav a {
 .copyright {
     font-size: 12px;
     color: var(--light-text);
-    display: block;
+    display: flexbox
     margin: 5px 0;
 }
     
