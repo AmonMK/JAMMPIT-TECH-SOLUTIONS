@@ -754,4 +754,51 @@ nav a {
         transition: none;
     }
 }
-    
+details {
+    background: transparent !important;
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Hide the default exploded browser arrow marker completely */
+summary::-webkit-details-marker,
+summary::marker {
+    display: none !important;
+}
+
+/* Re-style the summary heading to look clean, clickable, and professional */
+summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05); /* Sleek glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+
+summary::after {
+    content: '▶';
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+    color: #4ade80;
+}
+
+/* Rotate tiny arrow smoothly when the FAQ item opens */
+details[open] summary::after {
+    transform: rotate(90deg);
+}
+
+/* answer text box inside the FAQ */
+details p {
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid #4ade80;
+    margin-top: 4px;
+    border-radius: 0 0 8px 8px;
+}    
