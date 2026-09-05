@@ -2,23 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Resources | JAMMPIT SOLTECH</title>
+    <title>JTS | Premium Systems Engineering &amp; Scalable Data Solutions</title>
+    <meta name="description" content="JAMMPIT TECH SOLUTIONS (JTS) architects high-performance full-stack web software, secure database infrastructure pipelines, and automated cloud systems for enterprises and SMEs in East Africa.">
+    <meta name="keywords" content="Data Engineering Kenya, Systems Architecture Nairobi, Full-Stack Web Development, Cybersecurity Audit, JTS, JAMMPIT TECH SOLUTIONS, Supabase, M-Pesa Integration">
+    <meta property="og:title" content="JTS | Premium Systems Engineering &amp; Scalable Data Solutions">
+    <meta property="og:description" content="Architecting enterprise infrastructure and agile full-stack web software with precision.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.io">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="jts-global-header">
         <div class="jts-branding-notch">
             <a href="index.html" class="logo-brand-block">
-                <div class="logo-text-wrapper">
-                    <span class="logo-acronym">JTS</span>
-                    <svg class="jts-tech-tree-svg" width="56" height="20" viewBox="0 0 56 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 4h40" stroke="var(--accent-yellow)" stroke-width="2.5" stroke-linecap="round"/>
-                        <path d="M42 4c4 0 6 4 8 8m-8-8c3-1 6-2 10-2m-10 2c2 2 3 5 4 10" stroke="var(--accent-yellow)" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="50" cy="12" r="1.5" fill="#ffffff"/>
-                        <circle cx="52" cy="2" r="1.5" fill="#ffffff"/>
-                        <circle cx="46" cy="14" r="1.5" fill="#ffffff"/>
-                    </svg>
-                </div>
+                <span class="logo-acronym">JTS</span>
                 <span class="logo-subtext">JAMMPIT TECH SOLUTIONS</span>
             </a>
         </div>
@@ -47,23 +44,22 @@
             <div class="footer-brand-pane">
                 <span class="f-acronym">JTS</span>
                 <p class="f-tagline">JAMMPIT TECH SOLUTIONS</p>
-                <p class="f-desc">Architecting premium technical infrastructure, secure full-stack web ecosystems, and automated data engineering solutions.</p>
+                <p class="f-desc">Architecting clean business software, secure full-stack web platforms, and automated data solutions.</p>
             </div>
             <div class="footer-links-column">
-                <h5>Corporate</h5>
+                <h5>Projects</h5>
                 <ul>
-                    <li><a href="index.html">Home Overview</a></li>
-                    <li><a href="about.html">About Executive Team</a></li>
-                    <li><a href="services.html">Our Capabilities</a></li>
-                    <li><a href="projects.html">Active Ventures</a></li>
+                    <li><a href="projects.html">Overview Index</a></li>
+                    <li><a href="services.html">SME Platforms</a></li>
+                    <li><a href="services.html">Custom Consultancy</a></li>
                 </ul>
             </div>
             <div class="footer-links-column">
-                <h5>Ecosystem Integrations</h5>
+                <h5>Our Tools</h5>
                 <ul>
-                    <li><a href="projects.html">PropTrack Kenya (Active Build)</a></li>
-                    <li><a href="services.html">Full-Stack System Engineering</a></li>
-                    <li><a href="services.html">Application Security &amp; Audits</a></li>
+                    <li><a href="#">PropTrack Kenya (Featured Build)</a></li>
+                    <li><a href="#">Custom Business Utilities</a></li>
+                    <li><a href="#">Automation Scripts</a></li>
                 </ul>
             </div>
         </div>
@@ -72,5 +68,26 @@
             <p class="f-credit">Engineered with precision in Kenya 🇰🇪</p>
         </div>
     </footer>
+    <script>
+        (function() {
+            const header = document.querySelector('.jts-global-header');
+            if (!header) return;
+
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+                if (Math.abs(currentScrollY - lastScrollY) < 10) return;
+
+                if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                    header.classList.add('jts-header-hide');
+                } else {
+                    header.classList.remove('jts-header-hide');
+                }
+
+                lastScrollY = currentScrollY;
+            }, { passive: true });
+        })();
+    </script>
 </body>
 </html>
