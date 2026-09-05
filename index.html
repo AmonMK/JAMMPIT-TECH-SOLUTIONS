@@ -64,15 +64,92 @@
                     </div>
                 </div>
             </div>
-            <div>
-             
-                <h2 style="margin-top:50px;">FAQ</h2>
-                <select style="margin-top: auto;">
-                    <option> What payment methods do you accept?
-                    <option> What services do you offer?
-                </select>
-                            </div>
+        <section class="jammpit-faq" aria-labelledby="faq-title">
+            <div class="faq-header">
+                <h2 id="faq-title">Frequently Asked Questions</h2>
+                <span class="faq-badge">Beta Infrastructure Phase</span>
+            </div>
+
+            <div class="faq-list">
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>What is the Jammpit Beta Infrastructure Phase?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m9 5 7 7-7 7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer" hidden>
+                        <p>It is the live preview of our next-generation core architecture. We are testing enhanced speed, reinforced security layers, and optimized database handling under real-world conditions before making it the permanent standard.</p>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Will my existing data or projects be disrupted?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m9 5 7 7-7 7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer" hidden>
+                        <p>Not at all. The beta layer runs seamlessly beneath your active environment. Your data remains completely safe, intact, and unaffected.</p>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>What performance upgrades should I expect?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m9 5 7 7-7 7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer" hidden>
+                        <p>Users on the beta infrastructure will experience up to a 40% reduction in query load times and significantly faster background API processing.</p>
+                    </div>
+                </article>
+
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>How do I provide feedback or report a bug?</span>
+                        <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m9 5 7 7-7 7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer" hidden>
+                        <p>You can flag an issue instantly using the 'Submit Feedback' portal in your dashboard sidebar, or tag our engineering team directly via our developer community channel.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
         
+
+        <section class="ventures-section" aria-labelledby="ventures-title">
+            <div class="ventures-container">
+                <div class="ventures-intro">
+                    <p class="section-kicker">JAMMPIT LABS</p>
+                    <h2 id="ventures-title">Our Products &amp; Ventures</h2>
+                    <p>Focused systems built at the intersection of data, infrastructure, and real-world opportunity.</p>
+                </div>
+
+                <div class="ventures-grid">
+                    <article class="venture-card venture-card-featured">
+                        <div class="venture-card-topline">
+                            <span class="venture-index">01 / FLAGSHIP</span>
+                            <span class="status-pill"><span class="status-dot"></span>Beta Infrastructure Phase</span>
+                        </div>
+                        <div class="venture-card-content">
+                            <p class="venture-label">By JAMMPIT</p>
+                            <h3>PropTrack Kenya</h3>
+                            <p class="venture-subtitle">Automated Real Estate Valuation &amp; Market Analytics Engine</p>
+                            <p class="venture-description">A data engineering pipeline that ingests, cleans, and standardizes regional property listings to provide instantaneous, real-time feasibility metrics and valuation models for developers and investors.</p>
+                        </div>
+                        <div class="venture-card-footer">
+                            <span>Data intelligence for property markets</span>
+                            <span class="venture-arrow" aria-hidden="true">&rarr;</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
         <footer>
             <div class="footer-container">
@@ -86,5 +163,25 @@
                 <p class="copyright">&copy; 2026 JAMMPIT SOLTECH. All rights reserved.</p>
             </div>
         </footer>
+
+        <script>
+            document.querySelectorAll('.faq-question').forEach((question) => {
+                question.addEventListener('click', () => {
+                    const item = question.closest('.faq-item');
+                    const answer = item.querySelector('.faq-answer');
+                    const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+                    document.querySelectorAll('.faq-question').forEach((otherQuestion) => {
+                        otherQuestion.setAttribute('aria-expanded', 'false');
+                        otherQuestion.closest('.faq-item').querySelector('.faq-answer').hidden = true;
+                    });
+
+                    if (!isExpanded) {
+                        question.setAttribute('aria-expanded', 'true');
+                        answer.hidden = false;
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
