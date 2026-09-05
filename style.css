@@ -2,39 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/satoshi');
 
+/* --- JTS RECONSTRUCTED SYSTEM UTILITIES & LIGHT CANVAS --- */
 :root {
-    /* DEFAULT LIGHT THEME */
     --canvas-bg: #ffffff !important;
     --card-bg: #f8fafc !important;
     --card-border: rgba(15, 23, 42, 0.08) !important;
     --text-primary: #0f172a !important;
     --text-secondary: #475569 !important;
-
-    /* BRAND CONSTANTS (Stay true across both modes) */
-    --logo-bg: #000000;
-    --logo-text: #ffffff;
-    --accent-yellow: #eab308;
-
-    /* Existing component aliases */
-    --primary-green: var(--canvas-bg);
-    --dark-bg: var(--canvas-bg);
-    --light-text: var(--text-secondary);
-    --body-text: var(--text-primary);
-    --white: var(--text-primary);
-    --surface-1: var(--canvas-bg);
-    --surface-2: var(--card-bg);
-    --surface-glass: var(--card-bg);
-    --surface-glass-strong: var(--canvas-bg);
-    --surface-border: var(--card-border);
-    --accent: var(--accent-yellow);
-    --accent-soft: var(--accent-yellow);
-    --heading-gradient: linear-gradient(100deg, var(--text-primary) 10%, var(--text-secondary) 55%, var(--accent-yellow) 100%);
-    --ease-standard: 240ms ease-in-out;
-    --ease-emphasized: 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
-    --radius-sm: 6px;
+    --accent-yellow: #facc15 !important;
     --radius-md: 10px;
-    --radius-lg: 16px;
-    --radius-pill: 999px;
 }
 
 * {
@@ -44,61 +20,112 @@
 
 /* 2. THE FLEXBOX WRAPPER (This fixes your footer) */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: system-ui, -apple-system, sans-serif;
     margin: 0;
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
     background-color: var(--canvas-bg) !important;
-    transition: background-color 0.3s ease, color 0.3s ease;
-
-    /* These 3 lines make the footer stay at the bottom */
+    position: relative;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* 3. HEADER & NAVIGATION */
-header, .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(var(--card-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--card-border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+section,
+main,
+.jts-open-block {
+    position: relative;
+    z-index: 10;
+}
+
+/* --- JTS FIXED LIGHT NAVIGATION HEADER RULES --- */
+.jts-global-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
     padding: 0 2rem 0 0 !important;
-    background: var(--canvas-bg) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
+    background: #ffffff !important;
     position: sticky !important;
     top: 0;
     z-index: 9999;
     border-bottom: 2px solid var(--accent-yellow);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
-header nav {
-    display: flex;
+.jts-branding-notch {
+    position: relative;
+    display: inline-flex;
     align-items: center;
-}
-    .logo {
-    font-family: 'Satoshi', sans-serif; 
-    letter-spacing: 0.60rem;
-    font-size: larger; 
-    font-weight: 800;
-    color: var(--text-primary);
+    padding: 12px 28px 14px 24px;
+    background: #000000 !important;
+    border-radius: 0 0 16px 0;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
 }
 
-nav a {
-    margin-left: 35px;
-    text-decoration: solid;
-    color: var(--text-primary);
-    font-weight: 800;
-    transition: color 0.3s ease;
-    text-underline-offset: var(--dark-bg);
+.logo-brand-block {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important;
 }
 
-header nav a:hover,
-.navbar a:hover {
-    color: var(--accent-yellow);
+.logo-text-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    line-height: 1;
 }
 
-.navbar a {
-    color: var(--text-primary) !important;
+.logo-acronym {
+    color: #ffffff !important;
+    font-weight: 900;
+    font-size: 1.6rem;
+    letter-spacing: -0.04em;
+}
+
+.jts-tech-tree-svg {
+    margin-bottom: 2px;
+}
+
+.logo-subtext {
+    color: var(--accent-yellow) !important;
+    font-weight: 700;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+.jts-main-navbar {
+    display: flex;
+    gap: 2rem;
+}
+
+.jts-main-navbar a {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.jts-main-navbar a:hover {
+    color: var(--accent-yellow) !important;
 }
 
 /* 4. MAIN CONTENT AREAS */
@@ -112,57 +139,133 @@ header nav a:hover,
     background-color: var(--canvas-bg);
 }
 
-.container {
+/* --- JTS CONSOLIDATED GLOBAL CORE DESIGN UTILITIES --- */
+.jts-page-shell {
     max-width: 1200px;
     margin: 0 auto;
-    /* Centers the content horizontally */
     padding: 40px 5%;
     flex: 1;
-    /* This pushes the footer down by taking up all available space */
 }
 
-/* 5. COMPONENTS (Cards & Grids) */
-.card,
-.testimonial-card {
-    background: var(--card-bg);
-    padding: 15px;
+.page-title {
+    color: var(--text-primary);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.jts-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.jts-card {
+    background: rgba(248, 250, 252, 0.85) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--card-border) !important;
     border-radius: 12px;
-    margin-bottom: 20px;
-    border: 1px solid var(--card-border);
+    padding: 2.5rem;
+    position: relative;
+    color: var(--text-primary) !important;
+    transition: transform 0.2s, border-color 0.2s;
 }
 
-.testimonial-grid {
+.jts-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-yellow) !important;
+}
+
+.jts-card h2,
+.jts-card h3,
+.jts-card p {
+    color: var(--text-primary) !important;
+}
+
+.jts-card p {
+    color: var(--text-secondary) !important;
+}
+
+/* --- JTS TECH INTEGRATIONS MARQUEE SYSTEM --- */
+.jts-integrations-ticker-section {
+    width: 100%;
+    padding: 3rem 0;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+}
+
+.jts-marquee-viewport {
     display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
 }
 
-.user-info {
+.marquee-stream-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: jtsMarqueeRun 25s infinite linear;
+}
+
+.marquee-stream-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes jtsMarqueeRun {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.integration-node {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
-}
-
-/* 6. FOOTER */
-.footer-container {
-    text-align: center;
-    padding: 1%;
-    background: var(--canvas-bg);
-}
-
-.footer-nav {
-    margin-bottom: 15px;
-}
-
-.footer-nav a {
-    margin: 1.px;
-    text-decoration: none;
+    background: rgba(248, 250, 252, 0.9) !important;
+    border: 1px solid var(--card-border) !important;
+    padding: 14px 28px;
+    border-radius: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    white-space: nowrap;
     color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: border-color 0.2s, transform 0.2s;
 }
 
-/* 6. EXECUTIVE TEAM */
+.integration-node:hover {
+    border-color: var(--accent-yellow) !important;
+    transform: scale(1.02);
+    cursor: grab;
+}
+
+.jts-open-block {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.jts-open-block h2 {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.jts-open-block h2::after {
+    content: '.';
+    color: var(--accent-yellow);
+}
+
+.jts-open-block p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
 .executives-section {
     margin-top: 64px;
     padding: 64px 0 20px;
@@ -178,71 +281,46 @@ header nav a:hover,
 .executives-section .subtitle {
     max-width: 680px;
     margin: 0 0 34px;
-    color: var(--light-text);
-    font-family: 'Inter', sans-serif;
+    color: var(--text-secondary);
     line-height: 1.7;
 }
 
-.meet-executives-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 24px;
-}
-
-.exec-card {
-    position: relative;
+.executive-grid .jts-card {
     display: flex;
-    width: 100%;
     min-height: 540px;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    padding: 28px;
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
-    background: var(--card-bg);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.exec-card::before {
+.executive-grid .jts-card::before {
     position: absolute;
     top: 0;
     left: 24px;
     width: 58px;
     height: 3px;
-    background: var(--accent);
+    background: var(--accent-yellow);
     content: '';
-}
-
-.exec-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-yellow) !important;
-    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.3);
 }
 
 .card-num {
     align-self: flex-end;
-    color: var(--accent-soft);
+    color: var(--accent-yellow);
     font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.14em;
 }
 
-.exec-card h3 {
+.executives-section .jts-card h3 {
     max-width: 450px;
     margin: 52px 0 12px;
+    color: var(--text-primary);
     font-size: clamp(1.8rem, 3vw, 2.5rem);
     line-height: 1.05;
 }
 
-.exec-card h3,
-.exec-card h4 {
-    color: var(--text-primary);
-}
-
-.exec-card h4 {
+.executives-section .jts-card h4 {
     max-width: 450px;
     margin: 0 0 18px;
     color: var(--text-primary);
@@ -253,11 +331,10 @@ header nav a:hover,
     text-transform: uppercase;
 }
 
-.exec-card > p {
+.executives-section .jts-card > p {
     max-width: 440px;
     margin: 0;
     color: var(--text-secondary);
-    font-family: 'Inter', sans-serif;
     line-height: 1.7;
 }
 
@@ -277,18 +354,25 @@ header nav a:hover,
     color: var(--accent-yellow);
 }
 
+.resource-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.resource-row button {
+    width: auto;
+    padding: 5px 15px;
+}
+
 @media (max-width: 760px) {
     .executives-section {
         padding-top: 48px;
     }
 
-    .meet-executives-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .exec-card {
+    .executives-section .jts-card {
         min-height: 470px;
-        padding: 24px;
     }
 }
 
@@ -574,129 +658,6 @@ header nav a:hover,
         }
     }
 
-.copyright {
-    font-size: 12px;
-    color: var(--light-text);
-    display: flexbox;
-    margin: 5px 0;
-}
-
-/* 8. MODERN UI UTILITIES */
-.u-container {
-    width: min(100% - 2rem, 1200px);
-    margin-inline: auto;
-}
-
-.u-glass {
-    border: 1px solid var(--surface-border);
-    border-radius: var(--radius-lg);
-    background: var(--surface-glass);
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
-}
-
-.u-glass-strong {
-    background: var(--surface-glass-strong);
-}
-
-.text-gradient {
-    color: var(--accent);
-    background: var(--heading-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.u-surface {
-    border: 1px solid var(--surface-border);
-    border-radius: var(--radius-md);
-    background: var(--surface-1);
-}
-
-.u-radius-sm {
-    border-radius: var(--radius-sm);
-}
-
-.u-radius-md {
-    border-radius: var(--radius-md);
-}
-
-.u-radius-lg {
-    border-radius: var(--radius-lg);
-}
-
-.u-pill {
-    border-radius: var(--radius-pill);
-}
-
-.u-interactive {
-    transition: transform var(--ease-standard),
-        border-color var(--ease-standard),
-        background-color var(--ease-standard),
-        box-shadow var(--ease-standard),
-        color var(--ease-standard);
-}
-
-.u-interactive:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent-yellow);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
-}
-
-.u-button {
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.7rem 1rem;
-    border: 1px solid color-mix(in srgb, var(--accent-yellow) 45%, transparent);
-    border-radius: var(--radius-md);
-    color: var(--primary-green);
-    background: var(--accent);
-    cursor: pointer;
-    font: inherit;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.u-button:hover {
-    background: #7dffe2;
-}
-
-.u-grid-auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-    gap: clamp(1rem, 2vw, 1.5rem);
-}
-
-.u-flow > * + * {
-    margin-top: 1rem;
-}
-
-@media (max-width: 640px) {
-    .u-container {
-        width: min(100% - 1.25rem, 1200px);
-    }
-
-    .u-glass {
-        -webkit-backdrop-filter: blur(12px);
-        backdrop-filter: blur(12px);
-    }
-
-    .u-button {
-        width: 100%;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .u-interactive,
-    .u-interactive:hover {
-        transform: none;
-        transition: none;
-    }
-}
 details {
     background: transparent !important;
     display: block;
@@ -747,21 +708,27 @@ details p {
     color: var(--text-secondary);
 }
 
-/* --- JAMMPIT MODERN INTERACTIVE SKELETONS --- */
-
-/* Premium shimmering animation loop */
-@keyframes jammpitShimmer {
+/* --- REUSABLE MEDIA SKELETONS --- */
+@keyframes jtsShimmer {
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }
 }
 
-/* Master Skeleton Base Pattern: Deep dark slate with subtle pulsing light beam */
-.jammpit-slideshow-skeleton,
-.jammpit-avatar-skeleton {
-    background: linear-gradient(90deg, #131926 25%, #1b2336 50%, #131926 75%);
+.jts-skeleton {
+    background: linear-gradient(90deg, var(--canvas-bg) 25%, var(--card-border) 50%, var(--canvas-bg) 75%);
     background-size: 200% 100%;
-    animation: jammpitShimmer 2.5s infinite linear;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    animation: jtsShimmer 2.5s infinite linear;
+    border: 1px solid var(--card-border);
+}
+
+.jts-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(250, 204, 21, 0.15);
 }
 
 /* Hero Slideshow Spatial Footprint (Asymmetric wide canvas) */
@@ -787,61 +754,6 @@ details p {
     opacity: 0.7;
 }
 
-/* Executive Avatar Footprint (Perfect Geometric Circle) */
-.jammpit-avatar-skeleton {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    margin-bottom: 1.5rem;
-    display: block;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(250, 204, 21, 0.15); /* Subtly tinted yellow border ring */
-}
-
-/* --- JAMMPIT HIGH-CONTRAST TECH DESIGN SYSTEM --- */
-
-/* Clean, Crisp Geometric Brand Notch Box */
-.jammpit-logo-notch {
-    background: #ffffff !important;
-    padding: 14px 28px 14px 24px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    /* Perfect mechanical angled cut instead of a broken round curve */
-    border-radius: 0 0 12px 0;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* --- JAMMPIT STACKED LOGO TYPOGRAPHY SYSTEM --- */
-.logo-brand-block {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    text-decoration: none !important;
-    line-height: 1.1;
-}
-
-/* Primary Acronym (Bold, authoritative, solid black) */
-.logo-acronym {
-    color: #000000 !important;
-    font-weight: 900;
-    font-size: 1.5rem;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
-}
-
-/* Secondary Entity Descriptor (Thin, clean, aligned underneath) */
-.logo-subtext {
-    color: #475569 !important;
-    font-weight: 600;
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-top: 2px;
-}
-
 /* --- JAMMPIT HIGH-CONTRAST TICKER BANNER --- */
 .jammpit-ticker-banner {
     background-color: var(--accent-yellow) !important;
@@ -865,38 +777,287 @@ details p {
     font-weight: 800;
 }
 
-header, .navbar {
-    position: sticky !important;
-    top: 0;
+/* --- JTS MODERN INTERACTIVE CONTACT CANVAS --- */
+.jts-contact-hero {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+    background: var(--canvas-bg);
 }
 
-/* --- JAMMPIT OPEN-AIR SECTION TYPOGRAPHY --- */
-.company-intent-section {
+/* HoneyCoin-Inspired Ambient Background Matrix */
+.canvas-ambient-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(var(--card-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--card-border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Floating Structural Micro-Elements */
+.floating-stamp {
+    position: absolute;
+    font-size: 2.5rem;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+    user-select: none;
+    z-index: 2;
+    animation: driftFloat 6s infinite ease-in-out;
+}
+
+.dynamic-stamp-ke { top: 15%; left: 8%; animation-delay: 0s; }
+.dynamic-stamp-data { bottom: 20%; left: 12%; animation-delay: 2s; }
+.dynamic-stamp-sec { top: 25%; right: 10%; animation-delay: 4s; }
+
+@keyframes driftFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* Main Split Configuration */
+.contact-split-container {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4rem;
+    max-width: 1100px;
+    width: 100%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+}
+
+/* Typography Mechanics */
+.ticker-badge {
+    color: var(--accent-yellow);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.contact-text-pane h2 {
+    color: var(--text-primary);
+    font-size: 2.25rem;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+}
+
+/* --- JTS ENTERPRISE MATRIX FOOTER STYLE --- */
+.jts-enterprise-footer {
+    background: #facc15 !important;
+    border-top: 3px solid #000000;
+    padding: 4rem 2rem 2rem;
+    width: 100%;
+}
+
+.footer-matrix-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr repeat(auto-fit, minmax(160px, 1fr));
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.footer-brand-pane .f-acronym {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #000000 !important;
+    letter-spacing: -0.04em;
+}
+
+.footer-brand-pane .f-tagline {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #000000 !important;
+    letter-spacing: 0.05em;
+    margin: 2px 0 1rem;
+    opacity: 0.7;
+}
+
+.footer-brand-pane .f-desc {
+    color: #0f172a !important;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 320px;
+}
+
+.footer-links-column h5 {
+    color: #000000 !important;
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+}
+
+.footer-links-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
-    margin: 4rem auto;
-    padding: 0 1.5rem;
-    max-width: 800px;
+    gap: 0.75rem;
 }
 
-.intent-block h2 {
-    color: var(--text-primary);
-    font-size: 1.75rem;
-    font-weight: 800;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.02em;
-    position: relative;
+.footer-links-column a {
+    color: #0f172a !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: opacity 0.2s, text-decoration 0.2s;
 }
 
-.intent-block h2::after {
-    content: '.';
-    color: var(--accent-yellow);
+.footer-links-column a:hover {
+    text-decoration: underline !important;
+    opacity: 0.8;
 }
 
-.intent-text {
-    color: var(--text-secondary);
-    font-size: 1.15rem;
-    line-height: 1.7;
+.footer-legal-bar {
+    max-width: 1200px;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: #0f172a !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.footer-legal-bar p {
     margin: 0;
+}
+
+@media (max-width: 700px) {
+    .jts-enterprise-footer {
+        padding: 3rem 1.25rem 1.5rem;
+    }
+
+    .footer-matrix-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .footer-legal-bar {
+        flex-direction: column;
+    }
+}
+
+.contact-text-pane p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+}
+
+.quick-links-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.direct-link {
+    color: var(--text-primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.direct-link:hover { color: var(--accent-yellow); }
+.location-span { color: var(--text-secondary); font-size: 0.9rem; }
+
+/* Minimalist Form Controls */
+.jts-minimal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group select {
+    background: var(--canvas-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--accent-yellow);
+}
+
+.jts-submit-btn {
+    background: #000000 !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s, background-color 0.2s;
+    margin-top: 1rem;
+}
+
+.jts-submit-btn:hover {
+    transform: translateY(-2px);
+    background-color: var(--accent-yellow) !important;
+    color: #000000 !important;
+}
+
+@media (max-width: 640px) {
+    .jts-contact-hero {
+        padding: 2rem 1rem;
+    }
+
+    .contact-split-container {
+        gap: 2.5rem;
+        padding: 2rem 1.25rem;
+    }
+
+    .contact-text-pane h2 {
+        font-size: 1.9rem;
+    }
+
+    .floating-stamp {
+        font-size: 1.75rem;
+    }
 }
