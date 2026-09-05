@@ -3,19 +3,32 @@
 @import url('https://fonts.cdnfonts.com/css/satoshi');
 
 :root {
-    --primary-green: #0b0f19;
-    --dark-bg: #0b0f19;
-    --light-text: #94a3b8;
-    --body-text: #f8fafc;
-    --white: #f8fafc;
-    --surface-1: #0b0f19;
-    --surface-2: #151d2d;
-    --surface-glass: rgba(255, 255, 255, 0.03);
-    --surface-glass-strong: rgba(11, 15, 25, 0.9);
-    --surface-border: rgba(255, 255, 255, 0.08);
-    --accent: #6366f1;
-    --accent-soft: #a5b4fc;
-    --heading-gradient: linear-gradient(100deg, #f8fafc 10%, #a5b4fc 55%, #6366f1 100%);
+    /* DEFAULT LIGHT THEME */
+    --canvas-bg: #ffffff !important;
+    --card-bg: #f8fafc !important;
+    --card-border: rgba(15, 23, 42, 0.08) !important;
+    --text-primary: #0f172a !important;
+    --text-secondary: #475569 !important;
+
+    /* BRAND CONSTANTS (Stay true across both modes) */
+    --logo-bg: #000000;
+    --logo-text: #ffffff;
+    --accent-yellow: #eab308;
+
+    /* Existing component aliases */
+    --primary-green: var(--canvas-bg);
+    --dark-bg: var(--canvas-bg);
+    --light-text: var(--text-secondary);
+    --body-text: var(--text-primary);
+    --white: var(--text-primary);
+    --surface-1: var(--canvas-bg);
+    --surface-2: var(--card-bg);
+    --surface-glass: var(--card-bg);
+    --surface-glass-strong: var(--canvas-bg);
+    --surface-border: var(--card-border);
+    --accent: var(--accent-yellow);
+    --accent-soft: var(--accent-yellow);
+    --heading-gradient: linear-gradient(100deg, var(--text-primary) 10%, var(--text-secondary) 55%, var(--accent-yellow) 100%);
     --ease-standard: 240ms ease-in-out;
     --ease-emphasized: 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
     --radius-sm: 6px;
@@ -33,13 +46,9 @@
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    color: var(--body-text);
-    background-image: url('images/bg6.jpg');
-    background-repeat: no-repeat;   
-    background-attachment: fixed;  
-    background-position: center;   
-    background-size: auto;      
-    background-color: #0b0f19;
+    color: var(--text-primary);
+    background-color: var(--canvas-bg) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     /* These 3 lines make the footer stay at the bottom */
     display: flex;
@@ -48,39 +57,48 @@ body {
 }
 
 /* 3. HEADER & NAVIGATION */
-header,
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(11, 15, 25, 0.82);
-    padding: 15px 5%;
+header, .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    padding: 0 2rem 0 0 !important;
+    background: var(--canvas-bg) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    position: sticky !important;
+    top: 0;
+    z-index: 9999;
+    border-bottom: 2px solid var(--accent-yellow);
+}
+
+header nav {
+    display: flex;
+    align-items: center;
 }
     .logo {
     font-family: 'Satoshi', sans-serif; 
     letter-spacing: 0.60rem;
     font-size: larger; 
     font-weight: 800;
-    background: linear-gradient(90deg, #a5b4fc 0%, #6366f1 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-primary);
 }
 
 nav a {
     margin-left: 35px;
     text-decoration: solid;
-    color: var(--light-text);
+    color: var(--text-primary);
     font-weight: 800;
     transition: color 0.3s ease;
     text-underline-offset: var(--dark-bg);
+}
+
+header nav a:hover,
+.navbar a:hover {
+    color: var(--accent-yellow);
+}
+
+.navbar a {
+    color: var(--text-primary) !important;
 }
 
 /* 4. MAIN CONTENT AREAS */
@@ -91,7 +109,7 @@ nav a {
     background-repeat: no-repeat;   
     background-attachment: fixed;  
     background-size: auto;      
-    background-color: #0b0f19;
+    background-color: var(--canvas-bg);
 }
 
 .container {
@@ -106,11 +124,11 @@ nav a {
 /* 5. COMPONENTS (Cards & Grids) */
 .card,
 .testimonial-card {
-    background: var(--surface-glass);
+    background: var(--card-bg);
     padding: 15px;
     border-radius: 12px;
     margin-bottom: 20px;
-    border: 1px solid var(--surface-border);
+    border: 1px solid var(--card-border);
 }
 
 .testimonial-grid {
@@ -131,7 +149,7 @@ nav a {
 .footer-container {
     text-align: center;
     padding: 1%;
-    background: var(--surface-1);
+    background: var(--canvas-bg);
 }
 
 .footer-nav {
@@ -141,14 +159,14 @@ nav a {
 .footer-nav a {
     margin: 1.px;
     text-decoration: none;
-    color: var(--body-text);
+    color: var(--text-primary);
 }
 
 /* 6. EXECUTIVE TEAM */
 .executives-section {
     margin-top: 64px;
     padding: 64px 0 20px;
-    border-top: 1px solid var(--surface-border);
+    border-top: 1px solid var(--card-border);
 }
 
 .executives-section h2 {
@@ -181,9 +199,9 @@ nav a {
     justify-content: space-between;
     overflow: hidden;
     padding: 28px;
-    border: 1px solid var(--surface-border);
+    border: 1px solid var(--card-border);
     border-radius: 12px;
-    background: var(--surface-glass);
+    background: var(--card-bg);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -199,7 +217,7 @@ nav a {
 
 .exec-card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent);
+    border-color: var(--accent-yellow) !important;
     box-shadow: 0 22px 50px rgba(0, 0, 0, 0.3);
 }
 
@@ -219,10 +237,15 @@ nav a {
     line-height: 1.05;
 }
 
+.exec-card h3,
+.exec-card h4 {
+    color: var(--text-primary);
+}
+
 .exec-card h4 {
     max-width: 450px;
     margin: 0 0 18px;
-    color: var(--accent-soft);
+    color: var(--text-primary);
     font-family: 'Inter', sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
@@ -233,7 +256,7 @@ nav a {
 .exec-card > p {
     max-width: 440px;
     margin: 0;
-    color: var(--light-text);
+    color: var(--text-secondary);
     font-family: 'Inter', sans-serif;
     line-height: 1.7;
 }
@@ -241,17 +264,17 @@ nav a {
 .focus-box {
     margin-top: auto;
     padding: 18px;
-    border-top: 1px solid var(--surface-border);
+    border-top: 1px solid var(--card-border);
     border-radius: 8px;
-    background: var(--surface-glass);
-    color: var(--light-text);
+    background: var(--card-bg);
+    color: var(--text-secondary);
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     line-height: 1.65;
 }
 
 .focus-box strong {
-    color: var(--accent-soft);
+    color: var(--accent-yellow);
 }
 
 @media (max-width: 760px) {
@@ -274,8 +297,8 @@ nav a {
     position: relative;
     overflow: hidden;
     padding: 88px 5% 96px;
-    background: linear-gradient(135deg, rgba(2, 7, 4, 0.96), rgba(13, 35, 27, 0.94));
-    border-top: 1px solid rgba(0, 255, 200, 0.2);
+    background: var(--canvas-bg);
+    border-top: 1px solid var(--card-border);
 }
 
 .ventures-container {
@@ -292,7 +315,7 @@ nav a {
 .venture-label,
 .venture-index {
     margin: 0 0 12px;
-    color: #00ffc8;
+    color: var(--accent-yellow);
     font-family: 'Inter', sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
@@ -308,7 +331,7 @@ nav a {
 
 .ventures-intro > p:last-child {
     margin: 0;
-    color: rgba(244, 244, 244, 0.72);
+    color: var(--text-secondary);
     font-family: 'Inter', sans-serif;
     line-height: 1.7;
 }
@@ -326,16 +349,16 @@ nav a {
     flex-direction: column;
     justify-content: space-between;
     padding: 28px;
-    border: 1px solid rgba(0, 255, 200, 0.22);
+    border: 1px solid var(--card-border);
     border-radius: 8px;
-    background: linear-gradient(145deg, rgba(34, 58, 48, 0.94), rgba(17, 24, 22, 0.98));
+    background: var(--card-bg);
     box-shadow: 0 20px 55px rgba(0, 0, 0, 0.22);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .venture-card:hover {
     transform: translateY(-6px) scale(1.01);
-    border-color: rgba(0, 255, 200, 0.65);
+    border-color: var(--accent-yellow);
     box-shadow: 0 26px 70px rgba(0, 0, 0, 0.36);
 }
 
@@ -350,29 +373,6 @@ nav a {
 .venture-index {
     margin: 0;
     color: rgba(244, 244, 244, 0.5);
-}
-
-.status-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border: 1px solid rgba(0, 255, 200, 0.3);
-    border-radius: 999px;
-    color: #d9fff6;
-    background: rgba(0, 255, 200, 0.08);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-.status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #00ffc8;
-    box-shadow: 0 0 12px #00ffc8;
 }
 
 .venture-card-content {
@@ -393,7 +393,7 @@ nav a {
 .venture-subtitle {
     max-width: 620px;
     margin: 0 0 20px;
-    color: #b9ffec;
+    color: var(--text-primary);
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 700;
@@ -403,7 +403,7 @@ nav a {
 .venture-description {
     max-width: 680px;
     margin: 0;
-    color: rgba(244, 244, 244, 0.72);
+    color: var(--text-secondary);
     font-family: 'Inter', sans-serif;
     line-height: 1.75;
 }
@@ -418,7 +418,7 @@ nav a {
 }
 
 .venture-arrow {
-    color: #00ffc8;
+    color: var(--accent-yellow);
     font-size: 1.6rem;
     line-height: 1;
 }
@@ -439,10 +439,6 @@ nav a {
         flex-direction: column;
     }
 
-    .status-pill {
-        white-space: normal;
-    }
-
     .venture-card-content {
         padding: 42px 0 34px;
     }
@@ -457,9 +453,9 @@ nav a {
         width: min(90%, 960px);
         margin: 72px auto;
         padding: 28px;
-        border: 1px solid #1f2b2f;
+        border: 1px solid var(--card-border);
         border-radius: 16px;
-        background: #0b1215;
+        background: var(--card-bg);
         box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
     }
 
@@ -473,28 +469,16 @@ nav a {
 
     .faq-header h2 {
         margin: 0;
-        color: #ffffff;
+        color: var(--text-primary);
         font-size: clamp(1.25rem, 3vw, 1.5rem);
     }
 
-    .faq-badge {
-        flex-shrink: 0;
-        padding: 5px 12px;
-        border: 1px solid rgba(16, 185, 129, 0.2);
-        border-radius: 999px;
-        color: #34d399;
-        background: rgba(16, 185, 129, 0.1);
-        font-family: 'Inter', sans-serif;
-        font-size: 0.75rem;
-        text-align: center;
-    }
-
     .faq-list {
-        border-top: 1px solid #1f2b2f;
+        border-top: 1px solid var(--card-border);
     }
 
     .faq-item {
-        border-bottom: 1px solid #1f2b2f;
+        border-bottom: 1px solid var(--card-border);
     }
 
     .faq-question {
@@ -505,7 +489,7 @@ nav a {
         gap: 24px;
         padding: 20px 0;
         border: 0;
-        color: #ffffff;
+        color: var(--text-primary);
         background: transparent;
         cursor: pointer;
         font-family: 'Inter', sans-serif;
@@ -517,7 +501,7 @@ nav a {
 
     .faq-question:hover,
     .faq-question[aria-expanded="true"] {
-        color: #34d399;
+        color: var(--accent-yellow);
     }
 
     .faq-chevron {
@@ -554,7 +538,7 @@ nav a {
         margin: 0;
         overflow: hidden;
         padding: 0 44px 20px 0;
-        color: #9ca3af;
+        color: var(--text-secondary);
         font-family: 'Inter', sans-serif;
         font-size: 0.9rem;
         line-height: 1.75;
@@ -656,7 +640,7 @@ nav a {
 
 .u-interactive:hover {
     transform: translateY(-2px);
-    border-color: rgba(0, 255, 200, 0.6);
+    border-color: var(--accent-yellow);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
 }
 
@@ -667,7 +651,7 @@ nav a {
     justify-content: center;
     gap: 0.5rem;
     padding: 0.7rem 1rem;
-    border: 1px solid rgba(0, 255, 200, 0.35);
+    border: 1px solid color-mix(in srgb, var(--accent-yellow) 45%, transparent);
     border-radius: var(--radius-md);
     color: var(--primary-green);
     background: var(--accent);
@@ -732,20 +716,20 @@ summary {
     cursor: pointer;
     font-weight: bold;
     padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.05); /* Sleek glass effect */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 summary::after {
     content: '▶';
     font-size: 0.8rem;
     transition: transform 0.2s ease;
-    color: #4ade80;
+    color: var(--accent-yellow) !important;
 }
 
 /* Rotate tiny arrow smoothly when the FAQ item opens */
@@ -756,8 +740,163 @@ details[open] summary::after {
 /* answer text box inside the FAQ */
 details p {
     padding: 16px;
-    background: rgba(0, 0, 0, 0.2);
-    border-left: 3px solid #4ade80;
+    background: var(--canvas-bg);
+    border-left: 3px solid var(--accent-yellow);
     margin-top: 4px;
-    border-radius: 0 0 8px 8px;
-}    
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    color: var(--text-secondary);
+}
+
+/* --- JAMMPIT MODERN INTERACTIVE SKELETONS --- */
+
+/* Premium shimmering animation loop */
+@keyframes jammpitShimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Master Skeleton Base Pattern: Deep dark slate with subtle pulsing light beam */
+.jammpit-slideshow-skeleton,
+.jammpit-avatar-skeleton {
+    background: linear-gradient(90deg, #131926 25%, #1b2336 50%, #131926 75%);
+    background-size: 200% 100%;
+    animation: jammpitShimmer 2.5s infinite linear;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Hero Slideshow Spatial Footprint (Asymmetric wide canvas) */
+.jammpit-slideshow-skeleton {
+    width: 100%;
+    height: 420px;
+    border-radius: 16px;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elegant visual anchor for the slider placeholder */
+.jammpit-slideshow-skeleton::after {
+    content: "📁 JAMMPIT Venture Product Slider [Media Placeholder]";
+    color: #facc15;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+}
+
+/* Executive Avatar Footprint (Perfect Geometric Circle) */
+.jammpit-avatar-skeleton {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(250, 204, 21, 0.15); /* Subtly tinted yellow border ring */
+}
+
+/* --- JAMMPIT HIGH-CONTRAST TECH DESIGN SYSTEM --- */
+
+/* Clean, Crisp Geometric Brand Notch Box */
+.jammpit-logo-notch {
+    background: #ffffff !important;
+    padding: 14px 28px 14px 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    /* Perfect mechanical angled cut instead of a broken round curve */
+    border-radius: 0 0 12px 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* --- JAMMPIT STACKED LOGO TYPOGRAPHY SYSTEM --- */
+.logo-brand-block {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    text-decoration: none !important;
+    line-height: 1.1;
+}
+
+/* Primary Acronym (Bold, authoritative, solid black) */
+.logo-acronym {
+    color: #000000 !important;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+/* Secondary Entity Descriptor (Thin, clean, aligned underneath) */
+.logo-subtext {
+    color: #475569 !important;
+    font-weight: 600;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+/* --- JAMMPIT HIGH-CONTRAST TICKER BANNER --- */
+.jammpit-ticker-banner {
+    background-color: var(--accent-yellow) !important;
+    color: #000000 !important;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    width: 100%;
+    position: relative;
+    z-index: 10000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.jammpit-ticker-banner p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.jammpit-ticker-banner strong {
+    font-weight: 800;
+}
+
+header, .navbar {
+    position: sticky !important;
+    top: 0;
+}
+
+/* --- JAMMPIT OPEN-AIR SECTION TYPOGRAPHY --- */
+.company-intent-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    max-width: 800px;
+}
+
+.intent-block h2 {
+    color: var(--text-primary);
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+    position: relative;
+}
+
+.intent-block h2::after {
+    content: '.';
+    color: var(--accent-yellow);
+}
+
+.intent-text {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin: 0;
+}
