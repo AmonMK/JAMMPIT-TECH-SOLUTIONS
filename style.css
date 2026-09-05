@@ -152,6 +152,135 @@ main,
     color: var(--accent-yellow) !important;
 }
 
+/* --- JTS PRODUCTS MEGA-PANEL NAVIGATION --- */
+.jts-dropdown-trigger {
+    position: relative;
+}
+
+.dropdown-nav-btn {
+    border: 0;
+    padding: 0;
+    color: #0f172a;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.arrow-indicator {
+    color: var(--accent-yellow);
+    font-size: 0.8em;
+}
+
+.jts-mega-panel {
+    position: absolute;
+    top: calc(100% + 1.25rem);
+    right: -1rem;
+    z-index: 10001;
+    display: none;
+    width: min(760px, calc(100vw - 2rem));
+    padding: 1.5rem;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
+}
+
+.jts-dropdown-trigger:hover .jts-mega-panel,
+.jts-dropdown-trigger:focus-within .jts-mega-panel {
+    display: block;
+}
+
+.mega-panel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.mega-column h6 {
+    margin: 0 0 0.9rem;
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.mega-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mega-column li a {
+    display: block;
+    color: var(--text-secondary) !important;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: normal;
+}
+
+.mega-column li a:hover {
+    color: var(--accent-yellow) !important;
+}
+
+.help-action-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.demo-cta-box {
+    margin-top: 1.25rem;
+    border-top: 1px dashed var(--card-border);
+    padding-top: 1rem;
+}
+
+.mega-demo-btn {
+    display: block;
+    padding: 10px;
+    border-radius: 6px;
+    color: #ffffff !important;
+    background: #000000;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.mega-demo-btn:hover {
+    background: var(--accent-yellow) !important;
+    color: #000000 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 760px) {
+    .jts-main-navbar {
+        gap: 1rem;
+        padding-right: 1rem;
+    }
+
+    .jts-mega-panel {
+        position: fixed;
+        top: 76px;
+        right: 1rem;
+        left: 1rem;
+        width: auto;
+    }
+
+    .mega-panel-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* 4. MAIN CONTENT AREAS */
 .hero {
     text-align: center;
@@ -212,12 +341,34 @@ main,
 }
 
 /* --- JTS TECH INTEGRATIONS MARQUEE SYSTEM --- */
-.jts-integrations-ticker-section {
+.jts-ecosystem-section {
     width: 100%;
-    padding: 3rem 0;
+    padding: 4rem 0 3rem;
     overflow: hidden;
     position: relative;
     background: transparent;
+}
+
+.ecosystem-header {
+    margin: 0 auto 2rem;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.ecosystem-kicker {
+    color: var(--accent-yellow) !important;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.ecosystem-header h2 {
+    margin: 0.25rem 0 0;
+    color: var(--text-primary);
+    font-size: 1.75rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
 }
 
 .jts-marquee-viewport {
